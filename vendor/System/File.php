@@ -46,12 +46,12 @@ class File{
      * 
      * 
      * @param string $file
-     * @return void 
+     * @return mixed 
      */
     public function Requireing($file)
     {
         // require $file;
-        require $this->to($file);
+        return require $this->to($file);
     }
 
 

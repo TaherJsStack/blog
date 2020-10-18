@@ -76,6 +76,8 @@ class Route
             'method'    => strtoupper($requestMethod),
         ];
 
+        // print_r( $route );
+
         $this->routes[] = $route;
     }
 

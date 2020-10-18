@@ -7,18 +7,21 @@ use System\Controller;
 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-        // echo("HomeController");     
-        // echo $this->request->url();   
-    }
-
+    
     public function index()
     {
-        echo("HomeController");     
-        // echo $this->request->url();
+        // echo("HomeController");     
+        // echo( $this->request->url() );
 
-        echo $this->session->set('name', 'taher');
+        // echo $this->session->set('name', 'للللللللللللللل');
+        // echo $this->session->get('name');
+
+        // $this->load->controller("Header")->index();
+        // $data['YOUR_NAME'] = 'namo....';
+        // return $this->view->render('home', $data);
+        $this->db;
+        $this->db->query('INSERT INTO users SET email=?, status=?, users_group_id=?, first_name=?, last_name=?' , 'tito@tito.tito', 'any', 1, 'taher', 'ahmed');
+
     }
     //  /**
     //  * Display Home Page

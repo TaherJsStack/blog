@@ -61,6 +61,7 @@ class Loader
     {
         $controller = $this->getControllerName($controller);
 
+        // echo $controller;
         if (! $this->hasController($controller)) {
             $this->addController($controller);
         }

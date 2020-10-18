@@ -44,7 +44,6 @@ class Application
         if (is_null(static::$instance)) {
             static::$instance = new static($file);
         }
-
         return static::$instance;
     }
     
@@ -59,10 +58,12 @@ class Application
         $this->request->prepareUrl();
         $this->file->Requireing('App/index.php');
         list($controller, $method, $arguments) = $this->route->getProperRoute();
-        // $this->route->getProperRoute();
         
-        $this->load->action($controller, $method, $arguments);
+        $output = (string) $this->load->action($controller, $method, $arguments);
 
+        $this->response->setOutput($output);
+
+        $this->response->send();
     }
 
     /**
@@ -176,6 +177,8 @@ class Application
         $coreClasses = $this->coreClasses();
 
         $object = $coreClasses[$alias];
+
+        // echo $object;
 
         return new $object($this);
     }
